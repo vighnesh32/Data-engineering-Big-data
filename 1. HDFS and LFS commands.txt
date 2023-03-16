@@ -1,0 +1,70 @@
+1. ls (command to list the files)
+
+2. ls -l (command to list the files in long format)
+
+3. hadoop fs -ls / (command to list the contents of the root directory in the HDFS)
+
+4. vi test.txt (The vi command is a text editor in Linux and Unix-based systems. To create or edit a file named test.txt using the vi editor, open a terminal window)
+
+5. esc :wq (save and exit)
+
+6. hadoop fs -copyFromLocal test.txt / (copy file from one location to another)
+
+7. rm test.txt(delete the file)
+
+8. hadoop fs -chmod 777 /test.txt (command to give the permission to the file)
+
+9. hdfs dfs -copyToLocal /test.txt ~/ (command to copy from hdfs to lfs)
+
+10. cat test.txt (This command will output the contents of the test.txt in lfs)
+
+11. hadoop fs -cat /test.txt( command to display the contents of the test.txt file located in the root directory of HDFS)
+
+12. jps (The jps command (Java Virtual Machine Process Status Tool) is a command-line utility that lists all the Java processes running on a machine)
+
+13. hadoop version (This command will display information about your Hadoop installation, including the version number.)
+
+14. history (The history command is a Unix-based command that displays the command history of your terminal session.)
+
+15. mkdir vigya ( this command will create the new directory in lfs)
+
+16. hadoop fs -mkdir /vigya (this command will create the new directory in hdfs)
+
+17. vi test2.txt (create new file)
+
+18. cat test2.txt (command to see the content in the test2.txt)
+
+19. hadoop fs -put test2.txt /vigya (command to put the test2.txt to the hdfs vigya folder)
+
+20. hadoop fs -ls /vigya (command to see the content of the hdfs vigya folder)
+
+21. hadoop fs -chmod 777 /vigya/test2.txt (To change the permissions of a file in HDFS, you can use the hadoop fs -chmod command.)
+
+22. hadoop fs -get /vigya/test2.txt test2.txt( command to get test2.txt to the lfs)
+
+23 mv test.txt /home/cloudera/vigya (command to move the file within the lfs)
+
+24. hadoop fs -mv /test.txt /vigya (command to move the file within the hdfs)
+
+25. du (this command will show the disk user)
+
+26. du -s (this command will show the size of the disk utilised at the given time)
+
+27. hadoop fs -count / (To count the number of directories, files, and bytes under a specific path, simply provide the path as an argument.)
+
+28. hadoop fs -du / (The output will show the disk usage in bytes for each file and directory under the root directory)
+
+29. hadoop fs -df / (The hadoop fs -df command is used to display the available and used space in HDFS)
+
+30. hadoop fs -stat / (The hadoop fs -stat command is used to display information about the specified HDFS path)
+
+31. hdfs fsck / (The hdfs fsck command is used to check the health and consistency of the Hadoop Distributed FileSystem (HDFS))
+
+
+Note:
+1. In round bracket the explanation of the command is provided
+2. HDFS - Hadoop Distributed file system
+3. LFS - Local file system
+4. test.txt - file name
+5. test2.txt - file name
+6. vigya - directory name
