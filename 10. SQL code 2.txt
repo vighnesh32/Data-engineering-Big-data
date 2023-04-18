@@ -1,0 +1,181 @@
+-- command to create database
+CREATE DATABASE self_db2;
+
+-- command to use the DATABASE
+USE self_db2;
+
+-- command to create the TABLE
+CREATE TABLE IF NOT exists employee
+(
+    id int,
+    name varchar(50),
+    address varchar(50),
+    city varchar(50)
+);
+
+--command to insert the data in to the TABLE
+INSERT INTO employee values(1,'Vighnesh','Holloway','London');
+
+--check the TABLE
+SELECT * FROM employee;
+
+-- command to add a new column to a table
+ALTER TABLE employee ADD DOB DATE;
+
+-- check the TABLE
+SELECT * FROM employee;
+
+-- command to modify the existing data column in the table
+ALTER TABLE employee MODIFY COLUMN name VARCHAR(150);
+
+-- delete the existing column from the table
+ALTER TABLE employee DROP COLUMN city;
+
+-- command to rename the column NAME
+ALTER TABLE employee RENAME COLUMN name TO full_name;
+
+-- check the TABLE
+SELECT * FROM employee;
+
+-- command to drop the TABLE
+DROP TABLES employee;
+
+-- command to create TABLE
+CREATE TABLE if not exists employee
+(
+    id INT,
+    name VARCHAR(100),
+    age INT,
+    hiring_date DATE,
+    salary INT,
+    city VARCHAR(100)
+
+);
+
+insert into employee values(1,'Vighnesh', 24, '2023-07-2', 20000, 'London');
+
+insert into employee values(2,'Catalin', 26, '2023-07-12', 30000, 'Tokyo');
+
+insert into employee values(3,'Reshma', 28, '2023-07-13', 40000, 'Mumbai');
+
+insert into employee values(5,'Ankita', 23, '2023-07-14', 45000, 'Texas');
+
+-- check the table
+select * from employee;
+
+-- adding unique integrity constraint on id COLUMN
+alter table employee add constraint unique_id UNIQUE(id);
+
+insert into employee values(1,'Vighnesh', 24, '2023-07-2', 20000, 'London');
+
+-- drop the constraint from the exisiting file
+alter table employee drop constraint unique_id;
+
+
+insert into employee values(1,'Vighnesh', 24, '2023-07-2', 20000, 'London');
+
+-- check the table
+select * from employee;
+
+-- create a table with the primary key
+create table persons
+(
+    id int,
+    name varchar(50),
+    age int,
+    constraint pk primary key (id)
+);
+
+insert into persons values(1,'Vighnesh',26);
+
+--- Try to insert duplicate value for primary key COLUMN
+insert into persons values(1,'Adam',24);
+
+--- Try to insert null value for primary key COLUMN
+insert into persons values(null,'Jimmy',22);
+
+--- To check difference between Primary Key and Unique
+alter table persons add constraint unique_age UNIQUE(age);
+
+select * from persons;
+
+insert into persons values(2,'Richard',25);
+
+
+insert into persons values(3,'Anete',25);
+
+insert into persons values(3,'Amy',null);
+
+select * from persons;
+
+insert into persons values(4,'Charlie',null);
+
+insert into persons values(5,'Deepa',null);
+
+--- create tables for Foreign Key demo
+create table customer
+(
+    cust_id int,
+    name VARCHAR(50), 
+    age int,
+    constraint pk Primary Key (cust_id) 
+);
+-- Differen between Drop & Truncate Command
+-- for truncate the table will become EMPTY
+-- for drop the table will be deleted
+select * from persons;
+truncate table persons;
+
+select * from persons;
+
+drop table persons;
+
+-- operations with select command
+select * from employee;
+
+
+-- counting the total records
+select count(*) from employee;
+
+-- alias declaration
+select count(*) as total_row_count from employee;
+
+-- display the specific columns from the table
+select name,age from employee;
+
+-- alias for the multiple COLUMNS
+select name as employee_name, age as employee_age from employee;
+
+-- distinct hiraing date from the table
+select distinct(hiring_date) as distinct_hiring_date from employee;
+
+--how many unique age values in the TABLE
+select count(distinct(age)) as unique_age from employee;
+
+-- increment salary of each employee by 30 PERCENT_RANK
+select id,name,salary as old_salary,(salary+salary*0.3) as new_salary from employee;
+
+
+--syntax for the update command
+select * from employee;
+
+--update the salary of employee after giving 30% increment
+update employee set salary = salary + salary * 0.3;
+
+select * from employee
+
+-- filtering using where clause
+
+select * from employee where age=26;
+
+-- update the salary of the employee who joined the company on 2023-07-12 to 75000
+update employee set salary = 75000 where hiring_date = '2023-07-12';
+
+select * from employee where hiring_date = '2023-07-12';
+
+-- delete the record of employee who join the company on 2023-07-12
+delete from employee where hiring_date = '2023-07-12'
+
+select * from employee;
+
+
